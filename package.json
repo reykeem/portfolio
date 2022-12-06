@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "./client/index.tsx",
-  "homepage": "https://reykeem.github.io/website",
+  "homepage": "https://reykeem.github.io/portfolio",
   "scripts": {
     "start": "NODE_ENV=production nodemon server/server.js",
     "build": "NODE_ENV=production webpack",
@@ -13,13 +13,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/reykeem/website.git"
+    "url": "git+https://github.com/reykeem/portfolio.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/reykeem/website/issues"
+    "url": "https://github.com/reykeem/portfolio/issues"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
