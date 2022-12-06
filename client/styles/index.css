@@ -1,0 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: rgb(187, 220, 249);
+  background-color: #05011e;
+  font-family: "Inter", sans-serif;
+}

@@ -1,0 +1,16 @@
+.hero {
+  margin: 250px 0px 400px;
+  border: lime 1px solid;
+  width: 50%;
+  text-align: center;
+  display: inline-block;
+}
+
+.hero h1 {
+  text-shadow: rgb(199, 255, 254) 1px 0 10px;
+  font-size: 4rem;
+}
+
+.hero span {
+  font-size: 1.2rem;
+}
