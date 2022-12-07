@@ -33,9 +33,7 @@ function TopBar() {
 
   return (
     <div className="topbar">
-      <div className="logo">
-        <span>logo</span>
-      </div>
+      <div className="logo">{/* <span>logo</span> */}</div>
       <Box
         sx={{
           transform: "translateZ(0px)",

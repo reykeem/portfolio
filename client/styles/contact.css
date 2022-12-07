@@ -1,0 +1,19 @@
+.contact {
+  /* border: 1px solid cyan; */
+  margin: 250px 25% 400px;
+}
+
+.links {
+  list-style: none;
+}
+
+.links li {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spiel {
+  margin: 50px 0px;
+}

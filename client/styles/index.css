@@ -7,4 +7,9 @@ body {
   color: rgb(187, 220, 249);
   background-color: #05011e;
   font-family: "Inter", sans-serif;
+  overflow-y: scroll;
+}
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
 }

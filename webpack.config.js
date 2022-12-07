@@ -5,7 +5,6 @@ module.exports = {
   entry: "./client/index.tsx",
   output: {
     path: path.resolve(__dirname, "build"),
-    publicPath: "/",
     filename: "bundle.js",
   },
   mode: "development",
