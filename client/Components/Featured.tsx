@@ -4,17 +4,30 @@ import jpeg from "../assets/jpegmarketplace.png";
 import val from "../assets/valex.png";
 import latchql from "../assets/latchql.png";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import github from "../assets/icons8-github-48.png";
 
-function Featured() {
+type FeaturedPropsType = {
+  featuredRef: any;
+  featured1Ref: any;
+  featured2Ref: any;
+  featured3Ref: any;
+};
+
+function Featured({
+  featuredRef,
+  featured1Ref,
+  featured2Ref,
+  featured3Ref,
+}: FeaturedPropsType) {
   return (
-    <div className="featured">
+    <div className="featured" ref={featuredRef}>
       <h1>Featured Projects</h1>
-      <div className="latch">
+      <div className="latch" ref={featured1Ref}>
         <img src={latchql} alt="latchql" />
         <div className="desc">
           <div className="title-gh">
             <a href="https://github.com/oslabs-beta/LatchQL">
-              <GitHubIcon />
+              <img src={github} alt="github" />
             </a>
             <span className="title">LatchQL</span>
           </div>
@@ -34,18 +47,18 @@ function Featured() {
           </ul>
         </div>
       </div>
-      <div className="latch">
+      <div className="latch" ref={featured2Ref}>
         <img src={jpeg} alt="jpeg-marketplace" />
         <div className="desc">
           <div className="title-gh">
             <a href="https://github.com/Non-Fungibles/JPEG-Marketplace">
-              <GitHubIcon />
+              <img src={github} alt="github" />
             </a>
             <span className="title">JPEG Marketplace</span>
           </div>
           <span className="proj-main">
             A marketplace-simulation designed for users to buy, sell and trade
-            fake digital assets
+            digital assets in the form of pesudo-NFT's with 'fake' ethereum.
           </span>
           <ul className="techs-used">
             <li>React Router</li>
@@ -57,12 +70,12 @@ function Featured() {
           </ul>
         </div>
       </div>
-      <div className="latch">
+      <div className="latch" ref={featured3Ref}>
         <img src={val} alt="val-exchange" />
         <div className="desc">
           <div className="title-gh">
             <a href="https://github.com/reykeem/Valo-Exchange">
-              <GitHubIcon />
+              <img src={github} alt="github" />
             </a>
             <span className="title">Val Exchange</span>
           </div>

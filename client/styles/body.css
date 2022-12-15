@@ -2,3 +2,20 @@
   /* border: 1px solid red; */
   text-align: center;
 }
+
+.animated {
+  animation: fadeIn 0.5s linear;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20%);
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+    filter: blur(0);
+  }
+}

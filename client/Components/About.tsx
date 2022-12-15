@@ -14,7 +14,11 @@ import react from "../assets/react.png";
 import ts from "../assets/ts.png";
 import redis from "../assets/icons8-redis-48.png";
 
-function About() {
+type AboutPropsType = {
+  aboutRef: any;
+};
+
+function About({ aboutRef }: AboutPropsType) {
   const techs = [
     { name: "React", src: react },
     { name: "JavaScript", src: js },
@@ -35,16 +39,28 @@ function About() {
   ];
 
   return (
-    <div className="about">
-      <h1>About Me</h1>
+    <div id="about" className="about" ref={aboutRef}>
+      <div className="heading">
+        <h1>About Me</h1>
+        {/* <hr /> */}
+      </div>
       <div className="sub-h1">
         <div>
           <span>
             Hello! My name is Ray and I am a creator involved in web development
             and software engineering. My interest in web development stems from
-            an honest interest in the internet during the web2.0 boom and have
-            made it my mission to become an avid contributer to the developer
-            network.
+            an honest interest in the progression of technology and the
+            internet. My goals are to continue to contribute to this growing
+            network and sharpen my skills.
+            <br />
+            <br />
+            Hobbies &amp; Interests:
+            <br />
+            <br />- Web3 (Crypto, DeFi, NFTs)
+            <br />
+            - Men's Hair
+            <br />- Gaming
+            <br />- Men's Fashion
           </span>
           <br />
           <br />

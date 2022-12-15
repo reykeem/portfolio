@@ -37,6 +37,8 @@
   align-items: center;
   justify-content: space-between;
   margin: 5px 0px;
+  padding: 2px;
+  transition: transform 0.1s ease-in-out;
 }
 
 .techstack span {
@@ -48,7 +50,19 @@
 }
 
 .stack-ul {
+  /* border: 1px solid green; */
+  padding: 5px;
   display: flex;
-  width: 95%;
+  width: 100%;
   justify-content: space-between;
+}
+
+.techstack li:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+}
+
+.heading {
+  display: flex;
+  flex-direction: row;
 }

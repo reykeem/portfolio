@@ -1,9 +1,12 @@
 .hero {
-  margin: 250px 0px 350px;
+  margin: 300px 0px 350px;
   /* border: lime 1px solid; */
-  width: 50%;
+  width: 40%;
   text-align: center;
   display: inline-block;
+  /* transition: opacity 0.5s; */
+  /* opacity: 0; */
+  /* transition: all 2s; */
 }
 
 .hero h1 {

@@ -1,19 +1,43 @@
 .contact {
   /* border: 1px solid cyan; */
-  margin: 250px 25% 400px;
+  margin: 250px 30% 400px;
+}
+
+.contact h1 {
+  margin-bottom: 25px;
 }
 
 .links {
   list-style: none;
+  margin-left: 50px;
+}
+
+.links a {
+  text-decoration: none;
+  color: rgb(187, 220, 249);
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+
+.icon {
+  filter: invert(86%) sepia(3%) saturate(3257%) hue-rotate(177deg)
+    brightness(101%) contrast(96%);
+  width: 25px;
+  margin: 10px;
 }
 
 .links li {
   text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 150px;
+  /* border: 1px solid green; */
 }
 
 .spiel {
   margin: 50px 0px;
+}
+
+.links-sec {
+  display: flex;
+  justify-content: center;
 }
