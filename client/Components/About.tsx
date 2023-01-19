@@ -13,6 +13,7 @@ import js from "../assets/js.png";
 import react from "../assets/react.png";
 import ts from "../assets/ts.png";
 import redis from "../assets/icons8-redis-48.png";
+import py from "../assets/icons8-python-48.png";
 
 type AboutPropsType = {
   aboutRef: any;
@@ -34,7 +35,7 @@ function About({ aboutRef }: AboutPropsType) {
   const techs3 = [
     { name: "PostgresQL", src: pql },
     { name: "MongoDB", src: mongo },
-    { name: "Webpack", src: webpack },
+    { name: "Python3", src: py },
     { name: "Redis", src: redis },
   ];
 
@@ -42,7 +43,7 @@ function About({ aboutRef }: AboutPropsType) {
     <div id="about" className="about" ref={aboutRef}>
       <div className="heading">
         <h1>About Me</h1>
-        {/* <hr /> */}
+        <hr className="hr" />
       </div>
       <div className="sub-h1">
         <div>
@@ -65,7 +66,7 @@ function About({ aboutRef }: AboutPropsType) {
           <br />
           <br />
           <span>
-            Here are a few techonlogies I have been working with recently:
+            Here are a few technologies I have been working with recently:
           </span>
           <div className="stack-ul">
             <ul className="techstack">

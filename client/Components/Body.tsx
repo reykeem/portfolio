@@ -17,6 +17,7 @@ function Body() {
   const featured1Ref = useRef<HTMLDivElement>(null);
   const featured2Ref = useRef<HTMLDivElement>(null);
   const featured3Ref = useRef<HTMLDivElement>(null);
+  const featured4Ref = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -36,6 +37,7 @@ function Body() {
     const featured1 = featured1Ref.current;
     const featured2 = featured2Ref.current;
     const featured3 = featured3Ref.current;
+    const featured4 = featured4Ref.current;
     const contact = contactRef.current;
     if (hero) observer.observe(hero);
     if (about) observer.observe(about);
@@ -44,6 +46,7 @@ function Body() {
     if (featured1) observer.observe(featured1);
     if (featured2) observer.observe(featured2);
     if (featured3) observer.observe(featured3);
+    if (featured4) observer.observe(featured4);
     if (contact) observer.observe(contact);
     return () => {
       observer.disconnect();
@@ -59,6 +62,7 @@ function Body() {
         featured1Ref={featured1Ref}
         featured2Ref={featured2Ref}
         featured3Ref={featured3Ref}
+        featured4Ref={featuredRef}
       />
       <Contact contactRef={contactRef} />
       <Footer />

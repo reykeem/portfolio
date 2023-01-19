@@ -1,5 +1,5 @@
 .hero {
-  margin: 300px 0px 350px;
+  margin: 250px 0px;
   /* border: lime 1px solid; */
   width: 40%;
   text-align: center;
@@ -16,4 +16,8 @@
 
 .hero span {
   font-size: 1.2rem;
+}
+
+#bold {
+  color: #0087ca;
 }

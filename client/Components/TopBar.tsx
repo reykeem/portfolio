@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/topbar.css";
 import MenuIcon from "@mui/icons-material/Menu";
 import Box from "@mui/material/Box";
@@ -6,11 +6,9 @@ import SpeedDial from "@mui/material/SpeedDial";
 import SpeedDialAction from "@mui/material/SpeedDialAction";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import ArticleIcon from "@mui/icons-material/Article";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import RecentActorsIcon from "@mui/icons-material/RecentActors";
-import { makeStyles } from "@material-ui/core/styles";
 
 const actions = [
   {
@@ -28,7 +26,6 @@ const actions = [
     name: "Contact",
     target: ".contact",
   },
-  { icon: <ArticleIcon />, name: "Resume" },
   {
     icon: <LinkedInIcon />,
     name: "LinkedIn",
@@ -37,14 +34,25 @@ const actions = [
   { icon: <GitHubIcon />, name: "Github", link: "https://github.com/reykeem" },
 ];
 
-const styles = makeStyles((theme) => ({
-  menu: {
-    backgroundColor: "transparent",
+const nav = [
+  {
+    name: "About",
+    target: "#about",
   },
-}));
+  {
+    name: "Featured",
+    target: ".featured",
+  },
+  {
+    name: "Contact",
+    target: ".contact",
+  },
+];
 
 function TopBar() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [navHidden, setNavHidden] = useState(false);
+  const [prevScrollpos, setPrevScrollpos] = useState(window.pageYOffset);
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -54,15 +62,39 @@ function TopBar() {
     action.link && window.open(action.link);
     if (action.target) {
       const targetElement = document.querySelector(action.target);
-      console.log("target:", targetElement);
       targetElement.scrollIntoView({ behavior: "smooth" });
     }
   };
 
-  const classes = styles();
+  const refHandler = (ref: any) => {
+    const targetElement = document.querySelector(ref.target);
+    targetElement.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const resumeHandler = () => {
+    window.open(
+      "https://drive.google.com/file/d/1rPQx72hB2MTAviJRoQm1jwYdfifhk8fK/view"
+    );
+  };
+
+  useEffect(() => {
+    function handleScroll() {
+      const currentScrollPos = window.pageYOffset;
+      setPrevScrollpos(currentScrollPos);
+      if (prevScrollpos > currentScrollPos) {
+        setNavHidden(false);
+      } else {
+        setNavHidden(true);
+      }
+    }
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollpos]);
 
   return (
-    <div className="topbar">
+    <div className={`navbar ${navHidden ? "hidden" : ""}`}>
       <div className="logo">{/* <span>logo</span> */}</div>
       <Box
         sx={{
@@ -76,7 +108,8 @@ function TopBar() {
           sx={{
             position: "absolute",
             flexDirection: "column",
-            right: 0,
+            left: -10,
+            top: -20,
           }}
           icon={<MenuIcon />}
           onClose={handleClose}
@@ -95,20 +128,36 @@ function TopBar() {
           {actions.map((action) => (
             <SpeedDialAction
               key={action.name}
+              className="tooltip"
               icon={action.icon}
               tooltipTitle={action.name}
               tooltipOpen
+              tooltipPlacement="right"
               onClick={() => linkHandler(action)}
               FabProps={{
                 style: {
-                  color: "rgb(187, 220, 249)",
                   backgroundColor: "transparent",
+                  color: "rgb(187, 220, 249)",
                 },
               }}
             />
           ))}
         </SpeedDial>
       </Box>
+      <div className="nav">
+        {nav.map((ref) => (
+          <span
+            className="navigator"
+            onClick={() => refHandler(ref)}
+            key={ref.name}
+          >
+            {ref.name}
+          </span>
+        ))}
+        <span onClick={() => resumeHandler()} id="resume">
+          Resume
+        </span>
+      </div>
     </div>
   );
 }

@@ -1,7 +1,5 @@
 import React from "react";
 import "../styles/contact.css";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import github from "../assets/icons8-github-48.png";
 import linkedin from "../assets/icons8-linkedin-circled-60.png";
 import email from "../assets/icons8-mail-48.png";
@@ -13,7 +11,7 @@ type ContactPropsType = {
 function Contact({ contactRef }: ContactPropsType) {
   return (
     <div className="contact" ref={contactRef}>
-      <h1>Contact</h1>
+      <h1>Get In Touch</h1>
       <span className="spiel">
         Currently in pursuit of new opportunities and environments to feed my
         earnest growth as a dev. Feel free to reach out for any questions and
@@ -39,7 +37,7 @@ function Contact({ contactRef }: ContactPropsType) {
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="mailto:rayhkim23@gmail.com">
               <img src={email} alt="email" className="icon" />
               <span>Email</span>
             </a>

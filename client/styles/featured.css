@@ -12,6 +12,15 @@
   width: 70%;
 }
 
+.tasksai-container {
+  width: 70%;
+  display: flex;
+}
+
+.tasksai-container img {
+  width: 25%;
+}
+
 .latch {
   display: flex;
   align-items: center;
@@ -67,6 +76,10 @@
   font-size: 0.6rem;
   margin: 20px 5px 0px;
   color: rgb(95, 180, 255);
+}
+
+.tasksai-links a {
+  margin: 0px 5px;
 }
 
 .title-gh {

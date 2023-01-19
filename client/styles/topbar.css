@@ -1,9 +1,59 @@
-.topbar {
-  /* text-align: right; */
+.navbar {
   display: flex;
-  justify-content: space-between;
+}
+
+.navbar.hidden {
+  display: none;
 }
 
 .logo {
   font-size: 1em;
+}
+
+.navigator {
+  margin: 0px 15px 0px;
+  padding: 0px 0px 3px;
+  display: inline-block;
+  position: relative;
+}
+
+.navigator::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(95, 180, 255);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.navigator:hover {
+  cursor: pointer;
+}
+
+.navigator:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+#resume {
+  border: 1px solid rgb(187, 220, 249);
+  border-radius: 5px;
+  padding: 5px 15px;
+  margin-left: 10px;
+  background-color: transparent; /* original color */
+  transition: background-color 0.5s ease;
+}
+
+#resume:hover {
+  background-color: rgb(187, 220, 249);
+  color: #05011e;
+  cursor: pointer;
+}
+
+.tooltip .MuiTooltip-tooltip {
+  background-color: transparent;
 }
