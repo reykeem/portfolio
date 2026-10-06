@@ -1,4 +1,4 @@
-import { FiArrowRight } from "react-icons/fi";
+import { FiArrowRight, FiMapPin } from "react-icons/fi";
 import { profile, socials } from "../data/content";
 import Reveal from "./Reveal";
 
@@ -16,9 +16,12 @@ export default function Hero() {
       </Reveal>
       <Reveal delay={240}>
         <p className="hero-tagline">{profile.tagline}</p>
+        <p className="hero-location">
+          <FiMapPin aria-hidden="true" /> {profile.location}
+        </p>
       </Reveal>
       <Reveal delay={320} className="hero-actions">
-        <a className="button button-primary" href="#projects">
+        <a className="button button-primary" href="#experience">
           See my work <FiArrowRight aria-hidden="true" />
         </a>
         <a className="button button-outline" href={profile.resumeUrl} target="_blank" rel="noreferrer">

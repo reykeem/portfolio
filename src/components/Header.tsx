@@ -22,7 +22,7 @@ export default function Header({ items }: HeaderProps) {
 
   // Close the menu if the viewport grows past the mobile breakpoint.
   useEffect(() => {
-    const mq = window.matchMedia("(min-width: 768px)");
+    const mq = window.matchMedia("(min-width: 900px)");
     const onChange = () => mq.matches && setMenuOpen(false);
     mq.addEventListener("change", onChange);
     return () => mq.removeEventListener("change", onChange);

@@ -299,7 +299,7 @@ h3 {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .desktop-nav {
     display: flex;
     align-items: center;
@@ -382,6 +382,20 @@ h3 {
   font-size: clamp(1rem, 2.5vw, 1.125rem);
 }
 
+.hero-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.hero-location svg {
+  color: var(--accent);
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -432,8 +446,46 @@ h3 {
   color: var(--muted);
 }
 
-.muted-list {
+.about-education {
   color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.skills {
+  margin-top: clamp(40px, 6vw, 56px);
+}
+
+.skills-heading {
+  margin-bottom: 20px;
+  color: var(--text-strong);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.skill-groups {
+  display: grid;
+  gap: 20px;
+}
+
+.skill-group dt {
+  margin-bottom: 10px;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.skill-group dd {
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .skill-groups {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 40px;
+  }
 }
 
 .skill-grid {
@@ -477,7 +529,7 @@ h3 {
   position: relative;
   z-index: 1;
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 2 / 3;
   object-fit: cover;
   border-radius: var(--radius);
   filter: grayscale(20%);
@@ -529,6 +581,15 @@ h3 {
   font-weight: 600;
 }
 
+.timeline-item h3 a {
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+  transition: background-size 0.25s var(--ease);
+}
+
+.timeline-item h3 a:hover {
+  background-size: 100% 1px;
+}
+
 .timeline-period {
   color: var(--muted);
   font-family: var(--font-mono);
@@ -561,6 +622,15 @@ h3 {
   .timeline-item {
     grid-template-columns: 160px 1fr;
     gap: 24px;
+  }
+
+  .timeline-item h3 a {
+    background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+    transition: background-size 0.25s var(--ease);
+  }
+
+  .timeline-item h3 a:hover {
+    background-size: 100% 1px;
   }
 
   .timeline-period {
@@ -703,6 +773,48 @@ h3 {
   .project.is-flipped {
     grid-template-columns: 5fr 7fr;
   }
+}
+
+/* ---------- Talks ---------- */
+.talk-list {
+  display: grid;
+  gap: 16px;
+}
+
+.talk-card {
+  display: block;
+  padding: clamp(20px, 4vw, 28px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+  transition:
+    border-color 0.2s var(--ease),
+    transform 0.2s var(--ease);
+}
+
+.talk-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.talk-card h3 {
+  margin-top: 6px;
+  font-size: clamp(1.15rem, 3vw, 1.35rem);
+}
+
+.talk-card p:last-child {
+  margin-top: 10px;
+  color: var(--muted);
+}
+
+.talk-arrow {
+  vertical-align: -2px;
+  color: var(--accent);
+  transition: transform 0.2s var(--ease);
+}
+
+.talk-card:hover .talk-arrow {
+  transform: translate(2px, -2px);
 }
 
 /* ---------- Contact ---------- */
